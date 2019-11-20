@@ -48,6 +48,8 @@ final class BeersScreen : UIView {
         
         addSubview(components.cardView)
         
+        components.cardView.addSubview(components.tableViewBeers)
+        
         if UIDevice().userInterfaceIdiom == .phone {
                     switch UIScreen.main.nativeBounds.height {
                     case 1136:
@@ -86,6 +88,8 @@ final class BeersScreen : UIView {
     private func setupConstraint(){
         
         components.cardView.anchor(top: nil, left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: percentOfWidth(percente: 100), height: percentOfHeight(percente: 70), trailling: nil, leading: nil)
+        
+        components.tableViewBeers.anchor(top: components.cardView.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: percentOfWidth(percente: 100), height: percentOfHeight(percente: 70), trailling: nil, leading: nil)
         
         if iphoneX {
 

@@ -12,12 +12,12 @@ import RxSwift
 class BeersClient : BaseAPIConfiguration {
     
     
-    static func getBeersActionRX() -> Observable<ResultREST> {
+    static func getBeersActionRX() -> Observable<Beer> {
         
            return Observable.create({ (observable) -> Disposable in
 
                             let request = performRequest(route: BeersEndPoint.getBeers, completion: { response in
-
+                                
                                print("Pega a response: \(response)")
 
                                
@@ -28,7 +28,7 @@ class BeersClient : BaseAPIConfiguration {
 
                                         do {
                                             let decoder = JSONDecoder()
-                                            let decoderJson = try decoder.decode(ResultREST.self, from: json!)
+                                            let decoderJson = try decoder.decode(Beer.self, from: json!)
                                             observable.onNext(decoderJson)
                                             observable.onCompleted()
                                         } catch let error {

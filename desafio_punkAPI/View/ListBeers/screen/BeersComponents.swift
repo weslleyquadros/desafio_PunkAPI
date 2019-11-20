@@ -81,8 +81,8 @@ class BeersComponents {
          let element = UITableView()
          element.translatesAutoresizingMaskIntoConstraints = false
          element.backgroundColor = UIColor.white
-         element.layer.cornerRadius = 15.0
-         element.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+//         element.layer.cornerRadius = 15.0
+//         element.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
          element.separatorStyle = .none
          
          return element

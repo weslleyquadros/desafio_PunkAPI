@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		652DEAFA2384BBEB003B1645 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DEAF92384BBEB003B1645 /* AppDelegate.swift */; };
 		652DEAFC2384BBEB003B1645 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DEAFB2384BBEB003B1645 /* SceneDelegate.swift */; };
-		652DEAFE2384BBEB003B1645 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DEAFD2384BBEB003B1645 /* ViewController.swift */; };
 		652DEB032384BBF1003B1645 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652DEB022384BBF1003B1645 /* Assets.xcassets */; };
 		652DEB062384BBF1003B1645 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652DEB042384BBF1003B1645 /* LaunchScreen.storyboard */; };
 		652DEB122384BCDA003B1645 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DEB112384BCDA003B1645 /* Beer.swift */; };
@@ -42,6 +41,7 @@
 		65B3F4E72385840F00F2649C /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B3F4DD2385840F00F2649C /* Temp.swift */; };
 		65B3F4E82385840F00F2649C /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B3F4DE2385840F00F2649C /* Volume.swift */; };
 		65B3F4EA23858FF900F2649C /* ResultREST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B3F4E923858FF900F2649C /* ResultREST.swift */; };
+		65B3F4EF2385AA8E00F2649C /* ListBeersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B3F4EE2385AA8E00F2649C /* ListBeersCell.swift */; };
 		9F049F067E8B9E7123F488DF /* Pods_desafio_punkAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D679A68E4C9E41B3698332C4 /* Pods_desafio_punkAPI.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,6 @@
 		652DEAF62384BBEB003B1645 /* desafio_punkAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafio_punkAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		652DEAF92384BBEB003B1645 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		652DEAFB2384BBEB003B1645 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		652DEAFD2384BBEB003B1645 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		652DEB022384BBF1003B1645 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		652DEB052384BBF1003B1645 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		652DEB072384BBF1003B1645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		65B3F4DD2385840F00F2649C /* Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 		65B3F4DE2385840F00F2649C /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		65B3F4E923858FF900F2649C /* ResultREST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultREST.swift; sourceTree = "<group>"; };
+		65B3F4EE2385AA8E00F2649C /* ListBeersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBeersCell.swift; sourceTree = "<group>"; };
 		D679A68E4C9E41B3698332C4 /* Pods_desafio_punkAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_desafio_punkAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0977DE2433EB4FF448B97B2 /* Pods-desafio_punkAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio_punkAPI.release.xcconfig"; path = "Target Support Files/Pods-desafio_punkAPI/Pods-desafio_punkAPI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,6 @@
 				652DEB172384C66A003B1645 /* View */,
 				652DEAF92384BBEB003B1645 /* AppDelegate.swift */,
 				652DEAFB2384BBEB003B1645 /* SceneDelegate.swift */,
-				652DEAFD2384BBEB003B1645 /* ViewController.swift */,
 				652DEB022384BBF1003B1645 /* Assets.xcassets */,
 				652DEB042384BBF1003B1645 /* LaunchScreen.storyboard */,
 				652DEB072384BBF1003B1645 /* Info.plist */,
@@ -178,8 +177,8 @@
 		652DEB172384C66A003B1645 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				652DEB1A2384C685003B1645 /* screen */,
-				652DEB182384C682003B1645 /* BeersViewController.swift */,
+				65B3F4EC2385AA6400F2649C /* DetailsBeers */,
+				65B3F4EB2385AA4100F2649C /* ListBeers */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,6 +286,31 @@
 				65B3F4CF2385780400F2649C /* OAuthInterceptor.swift */,
 			);
 			path = Interceptor;
+			sourceTree = "<group>";
+		};
+		65B3F4EB2385AA4100F2649C /* ListBeers */ = {
+			isa = PBXGroup;
+			children = (
+				65B3F4ED2385AA7300F2649C /* cell */,
+				652DEB1A2384C685003B1645 /* screen */,
+				652DEB182384C682003B1645 /* BeersViewController.swift */,
+			);
+			path = ListBeers;
+			sourceTree = "<group>";
+		};
+		65B3F4EC2385AA6400F2649C /* DetailsBeers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailsBeers;
+			sourceTree = "<group>";
+		};
+		65B3F4ED2385AA7300F2649C /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				65B3F4EE2385AA8E00F2649C /* ListBeersCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		BB8A8786283598BECB925EF7 /* Pods */ = {
@@ -427,11 +451,11 @@
 				652DEB192384C682003B1645 /* BeersViewController.swift in Sources */,
 				652DEB1F2384C6BA003B1645 /* BeersScreen.swift in Sources */,
 				652DEB162384BEB3003B1645 /* BaseAPIConfiguration.swift in Sources */,
-				652DEAFE2384BBEB003B1645 /* ViewController.swift in Sources */,
 				65B3F4C8238575FF00F2649C /* Constants.swift in Sources */,
 				652DEB222384C6F1003B1645 /* Constraint_Extensions.swift in Sources */,
 				65B3F4E32385840F00F2649C /* Malt.swift in Sources */,
 				652DEB142384BD09003B1645 /* APIConfigurations.swift in Sources */,
+				65B3F4EF2385AA8E00F2649C /* ListBeersCell.swift in Sources */,
 				65B3F4E72385840F00F2649C /* Temp.swift in Sources */,
 				65B3F4E52385840F00F2649C /* Boil_volume.swift in Sources */,
 				65B3F4DF2385840F00F2649C /* Hops.swift in Sources */,
