@@ -54,20 +54,16 @@ class BeersViewController : UIViewController, UITableViewDelegate, CAAnimationDe
         
         viewModel = BeersViewModel()
         
-//        startScreen()
+        startScreen()
         
 //        viewModel.getBeers()
         
         appendList()
         
-        setUpContentView()
-                       components.tableViewBeers.register(ListBeersCell.self, forCellReuseIdentifier: "listBeersCell")
-                              
-                              components.tableViewBeers.dataSource = self
-                              components.tableViewBeers.delegate = self
         
-        components.searchBeersTextField.addTarget(self, action: #selector(seachInRequest), for: .editingChanged)
-        components.searchBeersTextField.endEditing(true)
+                             
+        
+       
         
        
         // Dispensar o teclado
@@ -179,7 +175,16 @@ class BeersViewController : UIViewController, UITableViewDelegate, CAAnimationDe
                 //            self.layerBg.isHidden = true
             self.setUpContentView()
                 
-                        }
+                //setUpContentView()
+                self.components.tableViewBeers.register(ListBeersCell.self, forCellReuseIdentifier: "listBeersCell")
+                       
+                self.components.tableViewBeers.dataSource = self
+                self.components.tableViewBeers.delegate = self
+                
+                
+            }
+                components.searchBeersTextField.addTarget(self, action: #selector(seachInRequest), for: .editingChanged)
+                components.searchBeersTextField.endEditing(true)
                 
                 
                 totalTime = 2
