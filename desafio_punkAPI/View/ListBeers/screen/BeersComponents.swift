@@ -78,13 +78,13 @@ class BeersComponents {
     }()
     
     var tableViewBeers : UITableView = {
-         let element = UITableView()
+         let element = UITableView.init(frame: CGRect.zero, style: .grouped)
          element.translatesAutoresizingMaskIntoConstraints = false
          element.backgroundColor = UIColor.white
 //         element.layer.cornerRadius = 15.0
 //         element.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
          element.separatorStyle = .none
-         
+       
          return element
      }()
     
@@ -109,5 +109,7 @@ class BeersComponents {
         
         return element
     }()
+    
+    
     
 }

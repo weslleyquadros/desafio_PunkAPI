@@ -54,20 +54,18 @@ class BeersViewController : UIViewController, UITableViewDelegate, CAAnimationDe
         
         viewModel = BeersViewModel()
         
+        //chama o lottie(Falso Splash), e ao final, joga os components na tela
         startScreen()
         
 //        viewModel.getBeers()
         
         appendList()
-        
-        
-                             
-        
-       
-        
        
         // Dispensar o teclado
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(view.endEditing(_:))))
+        
+       
+    
     }
     
      func appendList() {
@@ -101,33 +99,13 @@ class BeersViewController : UIViewController, UITableViewDelegate, CAAnimationDe
                                                                 options: NSLayoutConstraint.FormatOptions(),
                                                                 metrics: nil,
                                                                 views: ["v0" : contentScreen!])
-//           if UIDevice().userInterfaceIdiom == .phone {
-//               switch UIScreen.main.nativeBounds.height {
-//               case 1136:
-//                   iphone5s = true
-//               case 1334:
-//                   break
-//               case 1920, 2208:
-//                   break
-//               case 2436:
-//                   iphoneX = true
-//
-//               case 2688:
-//                   iphoneX = true
-//                   iphoneB = true
-//
-//               case 1792:
-//                   iphoneX = true
-//
-//               default:
-//                   break
-//               }
-//           }
            NSLayoutConstraint.activate(initialConstraints)
        }
     
+    
+    
             func startScreen() {
-    //            viewModel.confirmCodeEmail(code: components.fieldEmail.text!)
+  
                 layerBg.frame = (view.bounds)
                  view.layer.addSublayer(layerBg)
                 
@@ -135,20 +113,17 @@ class BeersViewController : UIViewController, UITableViewDelegate, CAAnimationDe
                      
                 view.addSubview(animationView)
                      
-                     animationView.translatesAutoresizingMaskIntoConstraints = false
+                animationView.translatesAutoresizingMaskIntoConstraints = false
                      
                      
                 animationView.centerYAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.centerYAnchor).isActive = true
                      
                 animationView.centerXAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+                animationView.heightAnchor.constraint(equalToConstant: 230).isActive = true
+                animationView.widthAnchor.constraint(equalToConstant: 230).isActive = true
                      
-                     
-                     
-                     animationView.heightAnchor.constraint(equalToConstant: 230).isActive = true
-                     animationView.widthAnchor.constraint(equalToConstant: 230).isActive = true
-                     
-                     animationView.loopMode = LottieLoopMode.loop
-                     animationView.play()
+                animationView.loopMode = LottieLoopMode.loop
+                animationView.play()
                      
                 
                 countdownLoading = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateLoading), userInfo: nil, repeats: true)
@@ -156,8 +131,7 @@ class BeersViewController : UIViewController, UITableViewDelegate, CAAnimationDe
             }
             
             @objc func updateLoading() {
-            
-                
+                  
                 if totalTime != 0 {
                     totalTime -= 1
                    
@@ -171,7 +145,7 @@ class BeersViewController : UIViewController, UITableViewDelegate, CAAnimationDe
                 countdownLoading.invalidate()
                 animationView.alpha = 0
               
-            UIView.animate(withDuration: 1.0) {
+            UIView.animate(withDuration: 0.8) {
                 //            self.layerBg.isHidden = true
             self.setUpContentView()
                 
@@ -185,6 +159,10 @@ class BeersViewController : UIViewController, UITableViewDelegate, CAAnimationDe
             }
                 components.searchBeersTextField.addTarget(self, action: #selector(seachInRequest), for: .editingChanged)
                 components.searchBeersTextField.endEditing(true)
+                
+                
+                //custom header tableview
+//                components.tableViewBeers = UITableView(frame: components.tableViewBeers.frame, style: .grouped)
                 
                 
                 totalTime = 2
@@ -351,6 +329,32 @@ extension BeersViewController : UITableViewDataSource {
          func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
                         return 3.5
          }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+
+        let label = UILabel()
+        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+        label.text = "Cervejas"
+        label.font = UIFont.boldSystemFont(ofSize: 40) // my custom font
+        label.textColor = UIColor.gray // my custom colour
+        label.alpha = 0.2
+
+        headerView.addSubview(label)
+
+        let labelTwo = UILabel()
+        labelTwo.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+        labelTwo.text = "Cervejas"
+        labelTwo.font = UIFont.boldSystemFont(ofSize: 22) // my custom font
+        labelTwo.textColor = UIColor.black // my custom colour
+        labelTwo.alpha = 0.8
+
+        headerView.addSubview(labelTwo)
+
+
+
+        return headerView
+    }
     
 }
 extension BeersViewController : UITextViewDelegate {
